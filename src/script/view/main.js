@@ -28,11 +28,12 @@ const main = () => {
         const htmlIntrotextElement = document.querySelector("#modalstv");
         htmlIntrotextElement.innerHTML ="";
 
-        results.forEach(result => {
-           const dates = new Date(result.first_air_date);
-           const size = Math.round(result.vote_average);
+        results.forEach(resulttv => {
+           const dates = new Date(resulttv.first_air_date);
+           const size = Math.round(resulttv.vote_average);
            const bulat = Math.trunc(size / 2);
            const sisa = size % 2;
+           let bulan = "";
            let ratingsElement="";
 
             if (sisa==1) {
@@ -49,48 +50,48 @@ const main = () => {
 
             switch(dates.getMonth()) {
                   case 1:
-                  var bulan = "Januari";
+                  bulan = "Januari";
                   break;
                   case 2:
-                  var bulan = "Februari";
+                   bulan = "Februari";
                   break;
                   case 3:
-                  var bulan = "Maret";
+                   bulan = "Maret";
                   break;
                   case 4:
-                  var bulan = "April";
+                   bulan = "April";
                   break;
                   case 5:
-                  var bulan = "Mei";
+                   bulan = "Mei";
                   break;
                   case 6:
-                  var bulan = "Juni";
+                   bulan = "Juni";
                   break;
                   case 7:
-                  var bulan = "Juli";
+                   bulan = "Juli";
                   break;
                   case 8:
-                  var bulan = "Agustus";
+                   bulan = "Agustus";
                   break;
                   case 9:
-                  var bulan = "September";
+                   bulan = "September";
                   break;
                   case 10:
-                  var bulan = "Oktober";
+                   bulan = "Oktober";
                   break;
                   case 11:
-                  var bulan = "November";
+                   bulan = "November";
                   break;
                   case 12:
-                  var bulan = "Desember";
+                   bulan = "Desember";
                   break;
               }; 
 
           
 
-        if (result.poster_path==null) {
+        if (resulttv.poster_path==null) {
             htmlIntrotextElement.innerHTML += `
-            <div class="portfolio-modal modal fade" id="detailModals${result.id}" tabindex="-1" role="dialog" aria-hidden="true">        
+            <div class="portfolio-modal modal fade" id="detailModals${resulttv.id}" tabindex="-1" role="dialog" aria-hidden="true">        
             <div class="modal-dialog">
             <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
@@ -103,14 +104,14 @@ const main = () => {
             <div class="col-lg-8 mx-auto">
             <div class="modal-body">
             <!-- Project Details Go Here -->
-            <h2 class="text-uppercase">${result.original_name}</h2>
-            <p class="item-intro text-muted">${result.vote_average} ${ratingsElement}</p>
+            <h2 class="text-uppercase">${resulttv.original_name}</h2>
+            <p class="item-intro text-muted">${resulttv.vote_average} ${ratingsElement}</p>
             <img style="width: 300px;" class="img-fluid d-block mx-auto" src="https://www.kesulawesi.com/assets/images/additional/movieback-jpg.jpg" alt="">
-            <p>${result.overview}</p>
+            <p>${resulttv.overview}</p>
             <ul class="list-inline">
             <li>Date: ${dates.getDate()} ${bulan} ${dates.getFullYear()}</li>
-            <li>Popularity: ${result.popularity}</li>
-            <li>Country: ${result.origin_country}</li>
+            <li>Popularity: ${resulttv.popularity}</li>
+            <li>Country: ${resulttv.origin_country}</li>
             </ul>
             <button class="btn btn-primary" data-dismiss="modal" type="button">
             <i class="fas fa-times"></i>
@@ -125,7 +126,7 @@ const main = () => {
             `;
         } else {
             htmlIntrotextElement.innerHTML += `
-            <div class="portfolio-modal modal fade" id="detailModals${result.id}" tabindex="-1" role="dialog" aria-hidden="true">        
+            <div class="portfolio-modal modal fade" id="detailModals${resulttv.id}" tabindex="-1" role="dialog" aria-hidden="true">        
             <div class="modal-dialog">
             <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
@@ -138,14 +139,14 @@ const main = () => {
             <div class="col-lg-8 mx-auto">
             <div class="modal-body">
             <!-- Project Details Go Here -->
-            <h2 class="text-uppercase">${result.original_name}</h2>
-            <p class="item-intro text-muted">${result.vote_average} ${ratingsElement}</p>
-            <img style="width: 300px;" class="img-fluid d-block mx-auto" src="https://image.tmdb.org/t/p/w300${result.backdrop_path}" alt="">
-            <p>${result.overview}</p>
+            <h2 class="text-uppercase">${resulttv.original_name}</h2>
+            <p class="item-intro text-muted">${resulttv.vote_average} ${ratingsElement}</p>
+            <img style="width: 300px;" class="img-fluid d-block mx-auto" src="https://image.tmdb.org/t/p/w300${resulttv.backdrop_path}" alt="">
+            <p>${resulttv.overview}</p>
             <ul class="list-inline">
             <li>Date: ${dates.getDate()} ${bulan} ${dates.getFullYear()}</li>
-            <li>Popularity: ${result.popularity}</li>
-            <li>Country: ${result.origin_country}</li>
+            <li>Popularity: ${resulttv.popularity}</li>
+            <li>Country: ${resulttv.origin_country}</li>
             </ul>
             <button class="btn btn-primary" data-dismiss="modal" type="button">
             <i class="fas fa-times"></i>
@@ -170,6 +171,7 @@ const main = () => {
            const dates = new Date(result.release_date);
            const size = Math.round(result.vote_average);
            const bulat = Math.trunc(size / 2);
+           let bulan = "";
            const sisa = size % 2;
            let ratingsElement="";
 
@@ -187,40 +189,40 @@ const main = () => {
 
             switch(dates.getMonth()) {
                   case 1:
-                  var bulan = "Januari";
+                   bulan = "Januari";
                   break;
                   case 2:
-                  var bulan = "Februari";
+                   bulan = "Februari";
                   break;
                   case 3:
-                  var bulan = "Maret";
+                   bulan = "Maret";
                   break;
                   case 4:
-                  var bulan = "April";
+                   bulan = "April";
                   break;
                   case 5:
-                  var bulan = "Mei";
+                   bulan = "Mei";
                   break;
                   case 6:
-                  var bulan = "Juni";
+                   bulan = "Juni";
                   break;
                   case 7:
-                  var bulan = "Juli";
+                   bulan = "Juli";
                   break;
                   case 8:
-                  var bulan = "Agustus";
+                   bulan = "Agustus";
                   break;
                   case 9:
-                  var bulan = "September";
+                   bulan = "September";
                   break;
                   case 10:
-                  var bulan = "Oktober";
+                   bulan = "Oktober";
                   break;
                   case 11:
-                  var bulan = "November";
+                   bulan = "November";
                   break;
                   case 12:
-                  var bulan = "Desember";
+                   bulan = "Desember";
                   break;
               }; 
 

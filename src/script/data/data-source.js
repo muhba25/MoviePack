@@ -56,7 +56,7 @@ class DataSource {
             })
     };
     static pagenextMovie(page) {
-            var nextPageMovie = parseInt(page) + 1;
+            const nextPageMovie = parseInt(page) + 1;
             return fetch(`https://api.themoviedb.org/3/movie/popular?api_key=ec0f3172f9eb86b9a3ca61685e1bd447&language=en-US&page=${nextPageMovie}`)
             .then(response => {
                 return response.json()
@@ -71,7 +71,7 @@ class DataSource {
             })
     };
     static pageprevMovie(page) {
-        var prevPageMovie = parseInt(page) - 1;
+        const prevPageMovie = parseInt(page) - 1;
             return fetch(`https://api.themoviedb.org/3/movie/popular?api_key=ec0f3172f9eb86b9a3ca61685e1bd447&language=en-US&page=${prevPageMovie}`)
             .then(response => {
                 return response.json()
@@ -86,7 +86,7 @@ class DataSource {
             })
     };
     static pagenextTvshow(page) {
-        var nextPageTvshow = parseInt(page) + 1;
+        const nextPageTvshow = parseInt(page) + 1;
             return fetch(`https://api.themoviedb.org/3/tv/popular?api_key=ec0f3172f9eb86b9a3ca61685e1bd447&language=en-US&page=${nextPageTvshow}`)
             .then(response => {
                 return response.json()
@@ -101,7 +101,7 @@ class DataSource {
             })
     };
     static pageprevTvshow(page) {
-        var prevPageTvshow = parseInt(page) - 1;
+        const prevPageTvshow = parseInt(page) - 1;
             return fetch(`https://api.themoviedb.org/3/tv/popular?api_key=ec0f3172f9eb86b9a3ca61685e1bd447&language=en-US&page=${prevPageTvshow}`)
             .then(response => {
                 return response.json()
@@ -117,7 +117,7 @@ class DataSource {
     };
 
     static pagenextMoviePage(page) {
-            var nextPageMovie = parseInt(page) + 1;
+            const nextPageMovie = parseInt(page) + 1;
             return fetch(`https://api.themoviedb.org/3/movie/popular?api_key=ec0f3172f9eb86b9a3ca61685e1bd447&language=en-US&page=${nextPageMovie}`)
             .then(response => {
                 return response.json()
@@ -132,7 +132,7 @@ class DataSource {
             })
     };
     static pageprevMoviePage(page) {
-            var prevPageMovie = parseInt(page) - 1;
+            const prevPageMovie = parseInt(page) - 1;
             return fetch(`https://api.themoviedb.org/3/movie/popular?api_key=ec0f3172f9eb86b9a3ca61685e1bd447&language=en-US&page=${prevPageMovie}`)
             .then(response => {
                 return response.json()
@@ -147,7 +147,7 @@ class DataSource {
             })
     };
     static pagenextTvshowPage(page) {
-            var nextPageTvshow = parseInt(page) + 1;
+            const nextPageTvshow = parseInt(page) + 1;
             return fetch(`https://api.themoviedb.org/3/tv/popular?api_key=ec0f3172f9eb86b9a3ca61685e1bd447&language=en-US&page=${nextPageTvshow}`)
             .then(response => {
                 return response.json()
@@ -162,7 +162,7 @@ class DataSource {
             })
     };
     static pageprevTvshowPage(page) {
-             var prevPageTvshow = parseInt(page) - 1;
+             const prevPageTvshow = parseInt(page) - 1;
             return fetch(`https://api.themoviedb.org/3/tv/popular?api_key=ec0f3172f9eb86b9a3ca61685e1bd447&language=en-US&page=${prevPageTvshow}`)
             .then(response => {
                 return response.json()
