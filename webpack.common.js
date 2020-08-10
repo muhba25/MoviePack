@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const CopyPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     entry: "./src/app.js",
@@ -33,6 +34,11 @@ module.exports = {
 
             ]
         }),
+    new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        Util: 'exports-loader?Util!bootstrap/js/dist/util'
+    }),
         new HtmlWebpackPlugin({
             template: "./src/index.html",
             filename: "index.html"
